@@ -1,0 +1,22 @@
+<div class="cabecalho-do-grid-container mat-elevation-z3">
+  <div (click)="_solicitaSemanaAnterior($event)"
+       [ngClass]="{'cabecalho-do-grid-arrow': true, left: true, disabled: disabled}"
+       [matRippleDisabled]="disabled"
+       matRipple>
+    <mat-icon>chevron_left</mat-icon>
+    <div>Semana Anterior</div>
+  </div>
+
+  <div [@pulse]="inicioSemana"
+       class="cabecalho-do-grid-datas">
+    {{inicioSemana | date: 'dd/MM/yy'}} a {{_fimSemana | date:'dd/MM/y'}}
+  </div>
+
+  <div (click)="_solicitaSemanaSeguinte($event)"
+       [ngClass]="{'cabecalho-do-grid-arrow': true, right: true, disabled: disabled}"
+       [matRippleDisabled]="disabled"
+       matRipple>
+    <div>Próxima Semana</div>
+    <mat-icon>chevron_right</mat-icon>
+  </div>
+</div>

@@ -2,8 +2,6 @@ import {AbstractEntity} from '../abstract-entity';
 import {RecursoAlocado} from './recurso-alocado';
 import {Repeticao} from './repeticao';
 
-import {ReservaStatus, ReservaStatusOptions} from '../geral/definicoes-tipos.type';
-
 import * as moment from 'moment';
 type Moment = moment.Moment;
 
@@ -28,7 +26,7 @@ export class Reserva extends AbstractEntity {
     public dataFim?: Moment,
     public dataInicio?: Moment,
     public unidade?: string,
-    public status?: ReservaStatus,
+    public status?: any,
     public recursoAlocado?: RecursoAlocado,
     public observacao?: string,
     public repeticao?: Repeticao,
@@ -64,7 +62,7 @@ export class Reserva extends AbstractEntity {
 
     /** Define o Status da Reserva */
     if (!status) {
-      this.status = ReservaStatusOptions.APROVADA;
+      this.status = 'APROVADA';
     }
 
     /** Define um usuario como Destinatario da Reserva */

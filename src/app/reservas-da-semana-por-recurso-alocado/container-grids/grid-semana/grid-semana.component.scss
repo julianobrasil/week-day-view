@@ -1,0 +1,79 @@
+// Import theming functions
+@import '~@angular/material/theming';
+// My custom theme
+@import 'src/theme.scss';
+// Use mat-color to extract individual colors from a palette as necessary.
+
+.grid-semana-container {
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+.grid-semana-body-wrapper {
+  display: flex;
+  justify-content: center;
+
+  flex: 1;
+
+  overflow: auto;
+
+  box-sizing: border-box;
+}
+
+.grid-semana-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  margin-bottom: 20px;
+
+  height: 1000px;
+
+  box-sizing: border-box;
+}
+
+.grid-da-semana-dias-da-semana {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  height: 48px;
+  min-width: 200px;
+
+  box-sizing: border-box;
+
+  background-color: mat-color($app-primary, 700);
+}
+
+.grid-semana-coluna-do-grid {
+  flex: 1;
+
+  &:not(:first-of-type) {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &:last-of-type {
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &:first-of-type {
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  box-sizing: border-box;
+
+  max-width: 200px;
+}
+
+app-cabecalho-do-grid {
+  margin-bottom: 20px;
+}

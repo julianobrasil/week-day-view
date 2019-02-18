@@ -1,0 +1,8 @@
+<div [ngStyle]="_cellStyle"
+     class="celula-de-reserva-do-grid-container mat-elevation-z4">
+  <div [matTooltip]="informacoesDaReserva?.reserva?.reservadoPara"
+       class="celula-de-reserva-do-grid-usuario-label mat-elevation-z8">
+    {{informacoesDaReserva?.reserva?.reservadoPara[0]}}
+  </div>
+  ({{informacoesDaReserva?.reserva?.dataInicio | date:'HH\'H\'mm'}} - {{informacoesDaReserva?.reserva?.dataFim | date:'HH\'H\'mm'}})
+</div>

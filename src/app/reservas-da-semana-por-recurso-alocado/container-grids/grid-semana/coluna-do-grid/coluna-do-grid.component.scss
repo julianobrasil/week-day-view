@@ -1,0 +1,23 @@
+// Import theming functions
+@import '~@angular/material/theming';
+// My custom theme
+@import 'src/theme.scss';
+// Use mat-color to extract individual colors from a palette as necessary.
+
+.coluna-do-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  min-width: 200px;
+
+  box-sizing: border-box;
+}
+
+.coluna-do-grid-reservas-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  margin: 0px 4px;
+}

@@ -1,4 +1,310 @@
-/* You can add global styles to this file, and also import other style files */
+// Import theming functions
+@import '~@angular/material/theming';
+// My custom theme
+@import 'src/theme.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Use mat-color to extract individual colors from a palette as necessary.
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Roboto;
+  outline: none !important;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+textarea {
+  resize: none;
+}
+
+hr {
+  border-top-color: rgba(0, 0, 0, 0.12);
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.full-height {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.app-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-spinner-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000000;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-bottom-left-fixed {
+  position: fixed !important;
+  bottom: 35px;
+  left: 35px;
+  z-index: 100;
+}
+
+.app-z-index-1000001 {
+  z-index: 1000001;
+}
+
+.app-spinner-backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.app-button-sm {
+  line-height: 30px !important;
+  font-size: 13px !important;
+  padding: 0 8px !important;
+}
+
+.app-button-xm {
+  line-height: 20px !important;
+  font-size: 13px !important;
+  padding: 0 8px !important;
+}
+
+.app-bold {
+  font-weight: bold;
+}
+
+.app-alert {
+  color: mat-color($app-warn);
+}
+
+.app-text-left {
+  text-align: left;
+}
+
+.app-text-center {
+  text-align: center;
+}
+
+.app-text-justify {
+  text-align: justify;
+}
+
+.app-text-right {
+  text-align: right !important;
+}
+
+.app-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-no-margin {
+  margin: 0;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-top-10 {
+  margin-top: 10px;
+}
+
+.m-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.m-right-10 {
+  margin-right: 10px;
+}
+
+.m-left-10 {
+  margin-left: 10px !important;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-top-10 {
+  padding-top: 10px;
+}
+
+.empty_list {
+  padding: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: mat-color($app-primary);
+}
+
+.app-empty-table {
+  padding: 20px;
+  text-transform: uppercase;
+  background-color: lightgoldenrodyellow;
+  border: 1px solid mat-color($app-primary);
+  border-radius: 10px;
+}
+
+td {
+  &.rs-td-centered.rs-td-centered {
+    text-align: center;
+  }
+}
+
+.c-30-pc {
+  width: 30%;
+}
+
+.c-40-px {
+  width: 40px;
+}
+
+.c-100-px {
+  width: 100px;
+}
+
+.c-200-px {
+  width: 200px;
+}
+
+.small-font {
+  font-size: smaller !important;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-invisible-concrete {
+  visibility: hidden;
+}
+
+.app-uppercase {
+  text-transform: uppercase;
+}
+
+.app-bold {
+  font-weight: bold;
+}
+
+.flexible-full-width {
+  min-width: 500px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.mat-icon.app-icon-search {
+  -webkit-animation: rotate 1s linear 0.1s infinite;
+  /* Safari 4+ */
+  -moz-animation: rotate 1s linear 0.1s infinite;
+  /* Fx 5+ */
+  -o-animation: rotate 1s linear 0.1s infinite;
+  /* Opera 12+ */
+  animation: rotate 1s linear 0.1s infinite;
+  /* IE 10+, Fx 29+ */
+}
+
+.app-snackbar-container-info {
+  background-color: #C5CAE9 !important;
+}
+
+.app-snackbar-container-error {
+  background-color: #BF370C !important;
+}
+
+.app-snackbar-font-small {
+  font-size: 0.8rem;
+}
+
+.app-hours-width {
+  max-width: 80px;
+  width: 100%;
+}
+
+/**
+ * Modificações no tema do material
+ */
+/** Bottom-sheet */
+.mat-bottom-sheet-container {
+  background-color: black !important;
+  color: mat-color($app-primary);
+
+  &.alocacao-bottom-sheet {
+    min-width: 100vw !important;
+  }
+}
+
+/** select */
+.mat-input-underline {
+  height: 2px !important;
+}
+
+.mat-select-underline {
+  height: 2px !important;
+}
+
+/** Dialogs */
+.mat-dialog-title {
+  background-color: mat-color($app-primary);
+  color: white;
+  margin: -24px -24px 8px !important;
+  padding: 12px 24px;
+}
+
+/** Cards */
+.custom-mat-card-title {
+  background-color: mat-color($app-primary);
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -16px !important;
+  text-align: center;
+  color: white;
+}
+
+/** Datepicker */
+.mat-calendar-header {
+  background-color: mat-color($app-primary);
+  color: white;
+}
+
+.mat-calendar-header {
+
+  .mat-calendar-previous-button,
+  .mat-calendar-next-button {
+    &.mat-icon-button {
+      color: white;
+      outline: none;
+    }
+  }
+}
+
+.mat-calendar-header .mat-calendar-period-button .mat-calendar-arrow {
+  border-top-color: white;
+}
+
+.mat-calendar-period-button.mat-button {
+  outline: none;
+}

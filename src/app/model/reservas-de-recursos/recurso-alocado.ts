@@ -1,6 +1,5 @@
 import {AbstractEntity} from '../abstract-entity';
 
-import {RecursoStatus, RecursoStatusOptions} from '../geral/definicoes-tipos.type';
 import {TipoDeRecurso} from './tipo-de-recurso';
 
 export class RecursoAlocado extends AbstractEntity {
@@ -21,7 +20,7 @@ export class RecursoAlocado extends AbstractEntity {
   constructor(
     public tipoDeRecurso?: TipoDeRecurso,
     public identificador?: string,
-    public status?: RecursoStatus,
+    public status?: any,
     public unidade?: string,
     public descricao?: string,
     public infoPopupHtml?: string,
@@ -31,7 +30,7 @@ export class RecursoAlocado extends AbstractEntity {
 
     this.tipoDeRecurso = tipoDeRecurso ? tipoDeRecurso : null;
     this.identificador = identificador ? identificador : '';
-    this.status = status ? status : RecursoStatusOptions.ATIVO;
+    this.status = status ? status : 'ATIVO';
     this.unidade = unidade ? unidade : null;
   }
 }

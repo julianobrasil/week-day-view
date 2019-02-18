@@ -1,7 +1,4 @@
 import {AbstractEntity} from '../abstract-entity';
-import {
-  AtributoParametroType,
-} from '../geral/definicoes-tipos.type';
 import {AtributoRecurso} from './atributo-recurso';
 
 export class AtributoParametro extends AbstractEntity {
@@ -19,7 +16,7 @@ export class AtributoParametro extends AbstractEntity {
    */
   constructor(
     public codigo?: string,
-    public tipo?: AtributoParametroType,
+    public tipo?: any,
     public descricao?: string,
     public unidadeMedida?: string,
     public stringValue?: string,

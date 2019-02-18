@@ -1,13 +1,11 @@
 import {AbstractEntity} from '../abstract-entity';
 
-import {RecursoTipo, RecursoTipoOptions} from '../geral/definicoes-tipos.type';
-
 export class TipoDeRecurso extends AbstractEntity {
   /** Aparece na tela quando for fazer reserva */
   nome = '';
 
   /** É espaço, equipamento ou recurso humano */
-  tipo: RecursoTipo;
+  tipo: any;
 
   /** Informação mais detalhada */
   descricao = ''; // não tenho certeza de que isso é preciso
@@ -18,14 +16,14 @@ export class TipoDeRecurso extends AbstractEntity {
   constructor(
     nome?: string,
     descricao?: string,
-    tipo?: RecursoTipo,
+    tipo?: any,
     infoPopupHtml?: string,
   ) {
     super();
 
     this.nome = nome ? nome : '';
     this.descricao = descricao ? descricao : '';
-    this.tipo = tipo ? tipo : RecursoTipoOptions.EQUIPAMENTO;
+    this.tipo = tipo ? tipo : 'EQUIPAMENTO';
     this.infoPopupHtml = infoPopupHtml ? infoPopupHtml : '';
   }
 }

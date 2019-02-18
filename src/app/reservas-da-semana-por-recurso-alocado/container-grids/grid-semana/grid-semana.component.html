@@ -1,0 +1,35 @@
+<div class="grid-semana-container">
+
+
+  <app-cabecalho-do-grid (inicioSemanaChange)="inicioSemanaChange.emit($event)"
+                         [disabled]="disabled"
+                         [inicioSemana]="inicioSemana">
+  </app-cabecalho-do-grid>
+
+  <div *ngIf="informacoesDasReservasPorDia?.length"
+       class="grid-semana-body-wrapper">
+    <ng-container *ngFor="let numeroDaColuna of [0,1,2,3,4,5,6];index as index">
+      <div *ngIf="_mostraColuna(index)"
+           class="grid-da-semana-dias-da-semana mat-elevation-z1">
+        <div>
+          {{numeroDaColuna | weekdayNumber2Text}}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div #bodyWrapper
+       *ngIf="informacoesDasReservasPorDia?.length"
+       class="grid-semana-body-wrapper">
+    <div [ngStyle]="{'margin-left':_componentService?.scrollBarWidth}" class="grid-semana-body">
+      <ng-container *ngFor="let infoDasReservasDoDia of informacoesDasReservasPorDia;index as index">
+        <app-coluna-do-grid *ngIf="_mostraColuna(index)"
+                            [numeroDaColuna]="index"
+                            [informacoesDasReservasDoDia]="infoDasReservasDoDia"
+                            class="grid-semana-coluna-do-grid">
+        </app-coluna-do-grid>
+      </ng-container>
+    </div>
+  </div>
+
+</div>

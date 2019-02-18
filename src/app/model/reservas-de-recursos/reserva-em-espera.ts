@@ -2,8 +2,6 @@ import {AbstractEntity} from '../abstract-entity';
 import {RecursoAlocado} from './recurso-alocado';
 import {Repeticao} from './repeticao';
 
-import {ReservaStatus, ReservaStatusOptions} from '../geral/definicoes-tipos.type';
-
 import * as moment from 'moment';
 import {TipoDeRecurso} from './tipo-de-recurso';
 type Moment = moment.Moment;
@@ -30,7 +28,7 @@ export class ReservaEmEspera extends AbstractEntity {
     public dataFim?: Moment,
     public dataInicio?: Moment,
     public unidade?: string,
-    public status?: ReservaStatus,
+    public status?: any,
     public tipoDeRecurso?: TipoDeRecurso,
     public recursoAlocado?: RecursoAlocado,
     public observacao?: string,

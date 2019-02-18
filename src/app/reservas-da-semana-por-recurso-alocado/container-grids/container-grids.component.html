@@ -1,0 +1,16 @@
+<form [formGroup]="_form"
+      novalidate>
+  <mat-form-field>
+    <mat-label>Id do Recurso alocado</mat-label>
+    <input formControlName="recursoAlocado"
+           matInput
+           required>
+  </mat-form-field>
+</form>
+<app-grid-semana (inicioSemanaChange)="_trataAlteracaoDaDataDeInicio($event)"
+                 [disabled]="!_form.valid"
+                 [inicioDoDia]="_inicioDoDia"
+                 [fimDoDia]="_fimDoDia"
+                 [inicioSemana]="inicioSemana"
+                 [reservas]="reservas">
+</app-grid-semana>

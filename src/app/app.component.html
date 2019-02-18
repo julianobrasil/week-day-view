@@ -1,1 +1,5 @@
-<app-week-view></app-week-view>
+<app-week-view (agendaDeRecursoSolicitada)="_obtemAgendaDeRecurso($event)"
+               [inicioSemana]="dataInicioSemana"
+               [reservas]="reservas"
+               [tiposDeRecurso]="tiposDeRecurso">
+</app-week-view>

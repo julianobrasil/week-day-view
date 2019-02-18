@@ -1,0 +1,50 @@
+// Import theming functions
+@import '~@angular/material/theming';
+// My custom theme
+@import 'src/theme.scss';
+// Use mat-color to extract individual colors from a palette as necessary.
+
+.cabecalho-do-grid-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border-radius: 8px;
+
+  height: 48px;
+
+  background-color: mat-color($app-primary);
+}
+
+.cabecalho-do-grid-arrow {
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+  
+  cursor: pointer;
+  user-select: none;
+
+  &.right {
+    padding: 0px 8px 0px 16px;
+  }
+
+  &.left {
+    padding: 0px 16px 0px 8px;
+  }
+
+  &.disabled {
+    color: rgba(0, 0, 0, 0.35);
+    cursor: auto;
+  }
+}
+
+.cabecalho-do-grid-datas {
+  align-self: center;
+}
